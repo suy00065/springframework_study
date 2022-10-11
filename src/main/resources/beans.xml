@@ -5,16 +5,19 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="EmailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.EmailMessageSender"
+    <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.EmailMessageSender"
     scope = "singleton" destroy-method="cleanup">
     </bean>
 
-    <bean id="SmsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender"
+    <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender"
     scope="prototype" init-method="init" >
     </bean>
 
 
-    <bean id = "MessageSenderService" class = "com.nhnacademy.edu.springframework.messagesender.MessageSenderService">
-        <property name = "MessageSender" ref="SmsMessageSender" />
+<!--    <bean id = "MessageSenderService" class = "com.nhnacademy.edu.springframework.messagesender.MessageSenderService">-->
+<!--        <property name = "MessageSender" ref="SmsMessageSender" />-->
+<!--    </bean>-->
+    <bean id = "MessageSenderService" class="com.nhnacademy.edu.springframework.messagesender.MessageSenderService" autowire="byName">
+
     </bean>
 </beans>

@@ -11,6 +11,11 @@ public class MessageSenderService {
 
     }
 
+    public void setSmsMessageSender(MessageSender messageSender) {
+        System.out.println("setMessageSender invoked!");
+        this.messageSender = messageSender;
+    }
+
     public void setMessageSender(MessageSender messageSender) {
         System.out.println("set by setMessageSender");
         this.messageSender = messageSender;
