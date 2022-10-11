@@ -10,9 +10,6 @@ public class SmsMessageSender implements MessageSender {
         System.out.println("SmsMessageSender init called !!");
     }
 
-    public void cleanup() {
-        System.out.println("SmsMessageSender cleanup called :>");
-    }
     public void sendMessage(User user, String message) {
         System.out.println("SMS Message Sent to " + user.getPhoneNumber() + " : " + message);
     }

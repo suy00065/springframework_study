@@ -13,4 +13,8 @@
     scope="prototype" init-method="init" >
     </bean>
 
+
+    <bean id = "MessageSenderService" class = "com.nhnacademy.edu.springframework.messagesender.MessageSenderService">
+        <constructor-arg ref = "SmsMessageSender" />
+    </bean>
 </beans>
