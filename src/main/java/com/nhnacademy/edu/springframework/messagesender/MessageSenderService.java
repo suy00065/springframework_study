@@ -1,9 +1,18 @@
 package com.nhnacademy.edu.springframework.messagesender;
 
 public class MessageSenderService {
-    private final MessageSender messageSender;
+    private MessageSender messageSender;
 
     public MessageSenderService(MessageSender messageSender) {
+        this.messageSender = messageSender;
+    }
+
+    public MessageSenderService() {
+
+    }
+
+    public void setMessageSender(MessageSender messageSender) {
+        System.out.println("set by setMessageSender");
         this.messageSender = messageSender;
     }
 
