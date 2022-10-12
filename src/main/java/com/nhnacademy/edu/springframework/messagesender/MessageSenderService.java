@@ -6,6 +6,7 @@ import com.nhnacademy.edu.springframework.messagesender.annotation.SelectSendTyp
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
@@ -13,6 +14,9 @@ public class MessageSenderService {
 
     private MessageSender messageSender;
     private List<MessageSender> messageSenders;
+
+    //@Value("${from}")
+    private String name;
 
     //@Autowired
     /*public MessageSenderService(MessageSender messageSender) {
@@ -26,8 +30,10 @@ public class MessageSenderService {
     }
 
     @Autowired
-    public MessageSenderService(@SMS2("smsMessageSender") MessageSender messageSender) {
+    public MessageSenderService(@SMS2("smsMessageSender") MessageSender messageSender,
+                                @Value("${from}") String name) {
         this.messageSender = messageSender;
+        this.name = name;
     }
 
     /*public MessageSenderService(@SMS(selectSendType = SelectSendType.SMS_) MessageSender messageSender) {
@@ -55,6 +61,7 @@ public class MessageSenderService {
     }
 
     public void messageSend() {
+        System.out.println("From : " + name);
         messageSender.sendMessage(new User("random@naver.com", "010-0000-0000"), "test 메시지1");
 
         //messageSenders.get(0).sendMessage(new User("random1@naver.com", "010-0000-0000"), "test 메시지1");

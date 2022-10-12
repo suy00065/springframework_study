@@ -7,7 +7,8 @@ public class SmsMessageSender implements MessageSender {
     }
 
     public void init() {
-        System.out.println("SmsMessageSender init called !!");
+        // System.out.println("SmsMessageSender init called !!");
+        System.out.println("--------------- Sms init called ------------------");
     }
 
     public void sendMessage(User user, String message) {
