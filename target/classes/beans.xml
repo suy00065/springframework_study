@@ -18,6 +18,9 @@
 
     <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender"
           scope="singleton" init-method="init" >
+        <qualifier type = "SMS">
+            <attribute key="selectSendType" value="SMS_"/>
+        </qualifier>
     </bean>
 
     <!--<bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender"
