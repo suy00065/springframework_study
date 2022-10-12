@@ -67,4 +67,5 @@ public class MessageSenderService {
         //messageSenders.get(0).sendMessage(new User("random1@naver.com", "010-0000-0000"), "test 메시지1");
         //messageSenders.get(1).sendMessage(new User("random2@naver.com", "010-1000-0000"), "test 메시지2");
     }
+
 }
