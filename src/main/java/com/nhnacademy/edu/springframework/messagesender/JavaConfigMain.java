@@ -11,15 +11,17 @@ public class JavaConfigMain {
         MessageSender emailMessageSender = context.getBean("emailMessageSender", MessageSender.class);
 
         // 리팩토링에 유리
-        /*AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(MainConfig.class);
+        AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(MainConfig.class);
 
         MessageSender emailMessageSender2 = MessageSender.class.cast(context2.getBean("emailMessageSender"));
-        MessageSender smsMessageSender2 = MessageSender.class.cast(context2.getBean("smsMessageSender"));*/
+        MessageSender smsMessageSender2 = MessageSender.class.cast(context2.getBean("smsMessageSender"));
 
         User user = new User("test1@naver.com", "010-0000-0000");
         smsMessageSender.sendMessage(user, "sms 메시지 테스트 내용");
         emailMessageSender.sendMessage(user, "이메일 메시지 테스트 내용");
 
-
+        System.out.println();
+        smsMessageSender2.sendMessage(user, "sms 메시지 테스트 내용2");
+        emailMessageSender2.sendMessage(user, "이메일 메시지 테스트 내용2");
     }
 }

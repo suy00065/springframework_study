@@ -3,12 +3,16 @@ package com.nhnacademy.edu.springframework.messagesender;
 public class SmsMessageSender implements MessageSender {
 
     public SmsMessageSender() {
-        System.out.println("SmsMessageSender initiated !");
+        System.out.println("SmsMessageSender initiated ! 기본 생성자 호출");
     }
 
     public void init() {
         // System.out.println("SmsMessageSender init called !!");
         System.out.println("--------------- Sms init called ------------------");
+    }
+
+    public void shutdown() {
+        System.out.println("----------------- Sms close -------------->");
     }
 
     public void sendMessage(User user, String message) {

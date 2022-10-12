@@ -3,7 +3,7 @@ package com.nhnacademy.edu.springframework.messagesender;
 public class EmailMessageSender implements MessageSender {
 
     public EmailMessageSender() {
-        System.out.println("EmailMessageSender initiated !");
+        System.out.println("EmailMessageSender initiated ! 기본 생성자 호출");
     }
 
     public void init() {

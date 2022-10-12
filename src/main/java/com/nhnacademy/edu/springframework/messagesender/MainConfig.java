@@ -5,15 +5,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@ImportResource("classpath:/beans.xml")
+//@ImportResource("classpath:/beans.xml")
 public class MainConfig {
 
-    @Bean
+    @Bean("smsMessageSender")
     public MessageSender smsMessageSender() {
         return new SmsMessageSender();
     }
 
-    @Bean
+    @Bean("emailMessageSender")
     public MessageSender emailMessageSender() {
         return new EmailMessageSender();
     }
