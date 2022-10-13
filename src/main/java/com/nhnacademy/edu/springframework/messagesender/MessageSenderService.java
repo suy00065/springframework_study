@@ -1,11 +1,7 @@
 package com.nhnacademy.edu.springframework.messagesender;
 
-import com.nhnacademy.edu.springframework.messagesender.annotation.SMS;
 import com.nhnacademy.edu.springframework.messagesender.annotation.SMS2;
-import com.nhnacademy.edu.springframework.messagesender.annotation.SelectSendType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
@@ -25,13 +21,12 @@ public class MessageSenderService {
     }*/
 
     //@Autowired(required = true)
-    public MessageSenderService(List<MessageSender> messageSenders) {
+    /*public MessageSenderService(List<MessageSender> messageSenders) {
         this.messageSenders = messageSenders;
-    }
+    }*/
 
     @Autowired
-    public MessageSenderService(@SMS2("smsMessageSender") MessageSender messageSender,
-                                @Value("${from}") String name) {
+    public MessageSenderService(@SMS2("smsMessageSender") MessageSender messageSender) {
         this.messageSender = messageSender;
         this.name = name;
     }
